@@ -43,4 +43,74 @@
                             </div>
 
 
+                        </div><!-- End .control-group  -->
+                        <div class="form-group relative">
+
+                            <div class="center">
+                                <br><br>
+                                <input type="hidden"name="newuser" value="{% if k %}F{% else %}T{% endif %}">
+                                <input type="hidden" value="{{ k.email }}"name="oldemail">
+                                <input  id="register" type="submit" class="nav-collapse" value="عضويت در سامانه خوابگاه " ><br>
+
+                            </div>
                         </div>
+
+                    </form>
+                </div>
+                <div id="reg">
+
+                        <div class="row">
+                            <div id="Btns" class="show">
+                                <div class="page-header">
+                                    <h3 class="center">عضويت در همايش</h3>
+                                </div>
+                                <form role="form" id="login-form1" class="form-horizontal" action="/saveh/" method="post">
+                                    {% csrf_token %}
+                                    <div class="row" style="direction: rtl">
+                                        <div class="form-group relative">
+                                            <input class="form-control" type="text" value="{{ k.fn }}" name="fname" id="user" placeholder="نام" >
+
+                                        </div><!-- End .control-group  -->
+                                        <div  class="form-group relative">
+
+                                            <input class="form-control" type="txt" value="{{ k.ln }}" name="lname" id="lastname1" placeholder="نام خانوادگي">
+                                        </div>
+                                        <div class="form-group relative">
+                                            <input class="form-control" type="email" value="{{ k.email }}" name="email" id="email1" placeholder="اايميل" >
+
+                                        </div><!-- End .control-group  -->
+                                        <div  class="form-group relative">
+
+                                            <input class="form-control" type="txt" value="{{ k.un }}" name="username" id="username1" placeholder="نام کاربري" >
+                                        </div>
+                                        <div  class="form-group relative">
+
+                                            <input class="form-control" type="password" value="{{ k.pw }}" name="pass1" id="pass1" placeholder="کلمه عبور" >
+                                        </div>
+                                        <div  class="form-group relative">
+
+                                            <input class="form-control" type="password" value="{{ k.pw }}" name="pass2" id="pass3" placeholder="تکرار کلمه عبور" >
+                                        </div>
+
+                                        <div  class="form-group relative">
+
+                                            <input class="form-control" type="txt" value="{{ k.num }}" name="number" id="num" placeholder=" شماره تماس" >
+                                        </div>
+                        
+                                </form>
+
+                            </div>
+                        </div>
+                       <!-- End .row-fluid  -->
+                </div>
+            </div>
+
+        </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}
+
