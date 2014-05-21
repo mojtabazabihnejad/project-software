@@ -1,5 +1,5 @@
 """
-Django settings for Khabgah project.
+Django settings for SampleProject project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-b)ok=tb1px%i_&#p0#*=fyf%743f+#a&)ury=6@fhgp7(*cl7'
+SECRET_KEY = 'eb#$ma5qomvg(#tjk95n@bb!duxlhfzt&snu6*ohp*7w1ji4cq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'KhabgahProject',
+    'myapp',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'Khabgah.urls'
+ROOT_URLCONF = 'SampleProject.urls'
 
-WSGI_APPLICATION = 'Khabgah.wsgi.application'
+WSGI_APPLICATION = 'SampleProject.wsgi.application'
 
 
 # Database
@@ -59,7 +59,12 @@ WSGI_APPLICATION = 'Khabgah.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'hamayeshyar',
+        # 'USER':'root',
+        # 'PASSWORD':'',
+        # 'HOST':'127.0.0.1',
+        # 'PORT':'',
+
     }
 }
 
