@@ -4,9 +4,28 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'Khabgah.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+                       # Examples:
+                       # url(r'^$', 'SampleProject.views.home', name='home'),
+                       # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-)
+                       url(r'^signup/$', 'myapp.views.signup',name='signup'),
+                       url(r'^login/$', 'myapp.views.login',name='login'),
+
+
+
+
+
+
+
+
+################################################################################################
+
+
+
+                       url(r'^test/$', 'myapp.views.test'),
+
+
+
+
+
+                       )
