@@ -3,3 +3,44 @@
 {% block page_title %}{% endblock %}
 
 {% block content %}
+    {% for i in lst %}
+        <h1>{{ i }}</h1>
+    {% endfor %}
+    <div class="col-md-5 col-md-offset-0">
+    <div class="container-fluid"style="margin-top: 450px" >
+        <div id="login" >
+            <div class="login-wrapper" data-active="log">
+                <div id="log">
+                    <div class="page-header">
+                        <h3 class="center"></h3>
+                    </div>
+                    <form role="form" id="login-form" class="form-horizontal" style="direction:rtl"  action="/save/" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group relative">
+                                <input class="form-control " value="{{ k.fn }}" type="text" name="fname" id="name" placeholder="نام" >
+
+                            </div><!-- End .control-group  -->
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="txt" value="{{ k.ln }}" name="lname" id="lastname" placeholder="نام خانوادگي">
+                            </div>
+                            <div class="form-group relative">
+                                <input class="form-control" type="email" name="email" value="{{ email.fn }}" id="email" placeholder="ايميل" >
+
+                            </div><!-- End .control-group  -->
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="txt" value="{{ k.un }}" name="username" id="username" placeholder="شماره دانشجویی" >
+                            </div>
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="password" value="{{ k.pw }}" name="pass1" id="pass" placeholder="کلمه عبور" >
+                            </div>
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="password" name="pass2" value="{{ k.pw }}" id="pass2" placeholder="تکرار کلمه عبور" >
+                            </div>
+
+
+                        </div>
