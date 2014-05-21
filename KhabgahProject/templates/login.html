@@ -4,3 +4,23 @@
 
 
 {% block content %}
+
+    <div class="col-md-5 col-md-offset-0"style="margin-top:100px">
+        <div class="container-fluid" style="margin-top:300px" >
+            <div id="login">
+                <div class="login-wrapper" data-active="log" >
+                    <div  id="log">
+                        <div class="page-header">
+                            <h3 class="center"></h3>
+                        </div>
+                        {{ msg }}
+                        <form role="form" id="login-form" class="form-horizontal" action="/user/dashboard/" method="post">
+                            {% csrf_token %}
+                            <div class="row" style="direction: rtl">
+                                <div class="form-group relative">
+                                    <input class="form-control" type="text" name="username" id="username1" placeholder="  شماره دانشجویی" >
+
+                                </div><!-- End .control-group  -->
+                                <div class="form-group relative">
+
+                                    <input class="form-control" type="password" name="password" id="pass" placeholder="کلمه عبور" >
