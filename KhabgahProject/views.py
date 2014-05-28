@@ -193,3 +193,14 @@ def admindashboardh(request):
 def test(request):
     return render(request,'user/test.html')
 #####################################################
+#####################################################
+def edituserh(request,email):
+
+    m=myuserh.objects.filter(email=email)
+    return render(request,'user/signuph.html',{'k':m[0]})
+#######################################################
+def editadmin(request,email):
+
+    m=myuser.objects.filter(email=email)
+    return render(request,'user/signupadmin.html',{'k':m[0]})
+
