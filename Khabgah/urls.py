@@ -10,6 +10,10 @@ urlpatterns = patterns('',
 
                        url(r'^signup/$', 'myapp.views.signup',name='signup'),
                        url(r'^login/$', 'myapp.views.login',name='login'),
+                       url(r'^home/$','myapp.views.home',name='home'),
+
+
+                       url(r'^admin/userh/editadminh/([^/]+)/$', 'myapp.views.editadminh',name='editadminh'),
 
 
 
