@@ -14,7 +14,40 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 def signup(request):
 
-    return render(request,'user/signup.html')
+    if request.method=="GET":
+        return render(request,'user/signup1.html')
+    else :
+
+        username=request.POST.get("username")
+        kname=request.POST.get("kname")
+        lname=request.POST.get("lname")
+        password=request.POST.get("password")
+        passwordc=request.POST.get("passwordc")
+        email=request.POST.get("email")
+        m=member.objects.filter(user=username)
+        if len(m)==0:
+            str1=""
+            if len(password)==0:
+                str1+=("پسوردی برای نام کاربری انتخاب نشده است")
+                return render(request,'user/signup1.html',{'s':str1})
+            if password!=passwordc:
+                str1+=("پسووردها یکسان وارد نشده اند")
+                return render(request,'user/signup1.html',{'s':str1})
+
+
+            if len(str1)==0 :
+
+                h=member(user=request.POST.get("username"),name=request.POST.get("kname"),
+                          lastname=request.POST.get("lname"),pass1=request.POST.get("password"),email=request.POST.get("email"),type1="user")
+                h.save()
+                return render(request,'user/dashboard.html')
+
+
+        else :
+            str = ""
+            str+=("این نام کاربری قبلا ثبت شده است")
+            return render(request,'user/signup1.html',{'p':str})
+
 #####################################################
 def login(request):
 
