@@ -1,0 +1,118 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %}
+    عضویت
+{% endblock title %}
+{% block page_title %}{% endblock %}
+
+{% block content %}
+
+    <link href="{% static 'css/signup1/css.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/signup1/css_002.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/signup1/css_003.css' %}" rel=" stylesheet" type="text/css">
+    <link href="{% static 'css/signup1/css_004.css' %}"rel="stylesheet" type="text/css">
+    <link href="{% static 'css/signup1/css_005.css' %}" rel="stylesheet" type="text/css">
+
+
+    <div class="blockbody formcontrols">
+
+
+
+
+        <form method="post" action="/signup/" >
+            {% csrf_token %}
+            <h3 class="blocksubhead" style="direction: rtl;text-align: center"> ثبت نام خوابگاه </h3>
+
+            <div class="section" style="direction: rtl">
+                <div class="blockrow" >
+                    <label for="regusername">شماره دانشجویی :</label>
+                    <div class="rightcol">
+                        <input autocomplete="off" class="primary textbox" id="regusername" name="username" maxlength="20" tabindex="1" type="text">
+                        <!--<img src="clear.gif" id="reg_verif_image" alt="" />-->
+                        <div id="reg_verif_div" class="primary" style="display:none;"></div>
+                        <script type="text/javascript" src="{% static 'css/signup1/vbulletin_ajax_nameverif.js' %}"></script>
+                        <script type="text/javascript">
+                            <!--
+                            regname_verif = new vB_AJAX_NameVerify('regname_verif', 'regusername');
+                            //-->
+                        </script>
+                        <p class="description"> لطفا شماره دانشجویی خود را وارد کنید</p>
+                    </div>
+                </div>
+                <div style="font-family: Arial">
+                    <p class="description" style="font-size: 18px;color: #ff0000">
+                        {{ p }}
+                    </p>
+                </div>
+
+
+                <div class="blockrow">
+                    <ul class="group">
+                        <li>
+                            <label for="password"> نام: </label>
+                            <input class="textbox" name="kname" id="name" maxlength="50" value="" tabindex="1" type="text">
+                        </li>
+                        <li>
+                            <label for="passwordconfirm">نام خانوادگی:</label>
+                            <input class="textbox" name="lname" id="khanevadegi" maxlength="50" value="" tabindex="1" type="text">
+                        </li>
+                    </ul>
+                    <p class="description">نام ونام خانوادگی خودرا وارد کنید </p>
+                </div>
+                <div class="blockrow">
+                    <ul class="group">
+                        <li>
+                            <label for="password">رمز عبور:</label>
+                            <input class="textbox" name="password" id="password" maxlength="50" value="" tabindex="1" type="password">
+                        </li>
+                        <li>
+                            <label for="passwordconfirm">تکرار رمز عبور:</label>
+                            <input class="textbox" name="passwordc" id="passwordconfirm" maxlength="50" value="" tabindex="1" type="password">
+                        </li>
+                    </ul>
+                    <p class="description">
+                 لطفا یک رمزعبور برای خود انتخاب گنید</p>
+                </div>
+                <div style="font-family: Arial">
+                    <p class="description" style="font-size: 18px;color: #ff0000">
+                        {{ s }}
+                    </p>
+                </div>
+
+                <div class="blockrow">
+                    <ul class="group">
+                        <li>
+                            <label for="email"> ادرس ایمیل:</label>
+                            <input class="textbox" name="email" id="email" maxlength="50" dir="ltr" tabindex="1" type="text">
+                        </li>
+                    </ul>
+                    <p class="description"
+                            >
+                        یک ادرس ایمیل وارد کنید
+                    </p>
+                </div>
+            </div>
+
+            <div class="blockfoot actionbuttons">
+                <div class="group">
+                    <input name="s"  value="" type="hidden">
+                    <input name="securitytoken" value="guest" type="hidden">
+                    <input name="do" value="addmember" type="hidden">
+                    <input name="url" value="http://p30download.com/" type="hidden">
+                    <input name="password_md5" type="hidden">
+                    <input name="passwordconfirm_md5" type="hidden">
+
+
+                    <input class="button" value="ثبت نام" tabindex="1" accesskey="s" type="submit" >
+
+                </div>
+            </div>
+        </form>
+
+
+        {#        <script async="" src="{% static 'signup/cbgapi.loaded_1' %}"></script><script async="" src="{% static 'signup/cbgapi.loaded_0' %}"></script><script type="text/javascript">#}
+        {##}
+
+
+    </div>
+{% endblock content %}
