@@ -236,4 +236,17 @@ def editadmin(request,email):
 
     m=myuser.objects.filter(email=email)
     return render(request,'user/signupadmin.html',{'k':m[0]})
+def deleteh1(request,email):
+
+    k = myuserh.objects.filter(email=email)
+    for i in k:
+        i.delete()
+    return HttpResponseRedirect("/adminh/userh1/")
+#####################################################
+def delete(request,email):
+
+    k = myuser.objects.filter(email=email)
+    for i in k:
+        i.delete()
+    return HttpResponseRedirect("/admin/user/")
 
