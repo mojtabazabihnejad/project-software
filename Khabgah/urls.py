@@ -14,6 +14,10 @@ urlpatterns = patterns('',
 
 
                        url(r'^admin/userh/editadminh/([^/]+)/$', 'myapp.views.editadminh',name='editadminh'),
+                       
+                       url(r'^direction/$', 'myapp.views.direction',name='direction'),
+
+
 
 
 
