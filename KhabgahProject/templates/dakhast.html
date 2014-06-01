@@ -1,0 +1,73 @@
+{% extends "layouts/based.html" %}
+{% load static %}
+{% block page_title %}{% endblock %}
+
+{% block content %}
+    {% for i in lst %}
+        <h1>{{ i }}</h1>
+    {% endfor %}
+    <div class="col-md-5 col-md-offset-0">
+    <div class="container-fluid " style="margin-top:400px" >
+        <div id="login" >
+            <div class="login-wrapper " data-active="log">
+                <div id="log">
+                    <div class="page-header">
+                        <h3 class="center">درخواست خوابگاه</h3>
+                    </div>
+                    <form role="form" id="login-form" class="form-horizontal " style="direction:rtl"  action="/sabt/" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group relative">
+                                <input class="form-control " type="text" name="fname" id="name" placeholder="نام" >
+
+                            </div><!-- End .control-group  -->
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="txt" name="lname" id="lastname" placeholder="نام خانوادگي">
+                            </div>
+                            <div class="form-group relative">
+                                <input class="form-control" type="email" name="email" id="email" placeholder="ايميل" >
+
+                            </div><!-- End .control-group  -->
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="txt" name="number" id="number" placeholder="شماره تماس" >
+                            </div>
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="password" name="pass1" id="pass1" placeholder="کلمه عبور" >
+                            </div>
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="password" name="pass2" id="pass2" placeholder="تکرار کلمه عبور" >
+                            </div>
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="txt" name="topic"placeholder="شماره اتاق" >
+                            </div>
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="txt" name="serial" placeholder="شماره دانشجویی">
+                            </div>
+                            <div  class="form-group relative">
+
+                                <input class="form-control" type="date" name="date">
+                            </div>
+
+                        </div><!-- End .control-group  -->
+                        <div class="form-group relative">
+
+                            <div class="center">
+                                <br><br>
+                                <input  id="register" type="submit" class="btn btn-primary pull-right col-lg-5 center" value="ارسال درخواست" ><br>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                </div>
+                </div>
+                </div>
+    </div>
+{% endblock content %}
