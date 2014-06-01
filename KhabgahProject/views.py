@@ -51,7 +51,27 @@ def signup(request):
 #####################################################
 def login(request):
 
-    return render(request, 'user/login.html')
+    if request.method=="GET":
+        return render(request, 'user/login1.html')
+    else :
+        str=""
+        str1=""
+        str2=""
+        kname=request.POST.get('kname')
+        pw=request.POST.get('pw')
+        str+=("همچین کاربری وجود ندارد")
+        str1+=("نام کاربری خالی است")
+        str2+=("رمز ورود خالی است")
+        if len(kname)==0:
+            return render(request, 'user/login1.html',{'s': str1})
+        if len(pw)==0:
+            return render(request, 'user/login1.html',{'s': str2})
+        m=member.objects.filter(user=kname,pass1=pw)
+        if len(m)==0:
+            return render(request, 'user/login1.html',{'s': str})
+        else:
+            return render(request,'user/dashboard.html')
+
 #####################################################
 def save(request):
 
