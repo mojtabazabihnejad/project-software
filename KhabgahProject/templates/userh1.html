@@ -1,0 +1,42 @@
+{% extends "layouts/baseadminh.html" %}
+
+{% block page_title %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 col-md-offset-1" style="margin-top: 40px">
+            </table>
+            <table class="table table-bordered table-striped" style="direction: rtl">
+                <tbody class="">
+                <tr>
+                    <td> نام</td>
+                    <td>family</td>
+                    <td>email</td>
+                    <td>username</td>
+                    <td>pass</td>
+                    <td>number</td>
+
+                    <td>serial</td>
+                    <td>delete</td>
+                    <td>edit</td>
+
+                    {% for i in s %}
+                        <tr>
+                            <td>{{ i.fn }}</td>
+                            <td>{{ i.ln }}</td>
+                            <td>{{ i.email }}</td>
+                            <td>{{ i.un }}</td>
+                            <td>{{ i.pw }}</td>
+                            <td>{{ i.serial }}</td>
+                            <td>{{ i.num }}</td>
+                            <td> <a href= "/adminh/userh1/deleteh1/{{i.email  }}/" }}"><i class="btn"> delete</a>  </td>
+                            <td> <a href= "/adminh/userh/editadminh/{{i.email  }}/" }}"><i class="btn"> edit</a>  </td>
+                        </tr>
+                    {% endfor %}
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
