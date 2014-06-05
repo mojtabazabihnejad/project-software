@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu1/css/drop.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu1/css/main.css' %}">
+
+    <title></title>
+
+    <!--[if IE 7]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+<![endif]-->
+
+    <!-- Initialise jQuery Library -->
+    <script type="text/javascript" src="{% static 'css/menu1/js/html5placeholder.jquery.min.js' %}"></script>
+    <!-- Initialise html5 placeholder -->
+    <script type="text/javascript" src="{% static 'css/menu1/js/jquery.pseudo.js' %}"></script>
+
+</head>
+<body id="drop">
+<div id="container">
+<div class="nav blue-menu">
+        <ul>
+            <li><a href="/login"> ورود ساکنین خوابگاه  </a></li>
+            <li><a href="/signup">عضویت در سامانه خوابگاه </a>
+            <li><a href="/adminlogin">  ورود مدیر خوابگاه</a></li>
+            <li><a href="#">خروج از سامانه </a></li>
+        </ul>
+        <div class="search-top">
+            <form action="/" class="inline-search">
+                <input type="text"  placeholder="Search" name="Search" >
+                <input type="submit" value="L"  name="s">
+            </form>
+            <div class="clear"></div>
+        </div>	<!--/ search-box-->
+        <div class="clear"></div>
+    </div><!--/ nav-->
+
+    <hr>
+    <div class="clear"></div>
+</div><!--/ nav-->
+
+<hr>
+
+</div><!--/ container-->
+<script type="text/javascript">
+    // Placeholders functionality
+    jQuery(function(){
+        jQuery(':input[placeholder]').placeholder();
+    });
+</script>
+</body>
